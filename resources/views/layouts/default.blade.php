@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Crete+Round|Varela+Round" rel="stylesheet">
-    <title>{{ config('app.name') }}</title>
+    <title>{{ page_title($title) }}</title>
     <style>
         body{
             font-family: 'Varela Round', sans-serif;
