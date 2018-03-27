@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="border-radius:0px;">
+<nav class="navbar navbar-default" style="border-radius:0px;margin-bottom:0px;">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -29,7 +29,7 @@
                   <li><a href="https://larachat.com" target="_BLANK">Larachat</a></li>
                 </ul>
             </li>
-            <li><a href="#">Contact</a></li>
+            <li class="{{ set_active('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">

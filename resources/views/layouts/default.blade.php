@@ -18,12 +18,16 @@
     		color: red;
     		font-weight: bold;
             margin-bottom: 5px;
-    	}
+        }
+        textarea{
+            resize: vertical;
+        }
     </style>
 </head>
 <body>
         
         @include('layouts.partials.nav')
+        
         {{--  @include('partials.flash')  --}}
         @yield('content')
         @include('layouts.partials.footer')
