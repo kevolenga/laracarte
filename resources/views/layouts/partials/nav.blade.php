@@ -29,14 +29,14 @@
                   <li><a href="https://larachat.com" target="_BLANK">Larachat</a></li>
                 </ul>
             </li>
-            <li class="{{ set_active('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="search" size="60" class="form-control" placeholder="Search">
+            <input type="search" size="58" class="form-control" placeholder="Search">
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
+          <li class="{{ set_active('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>          
           <li><a href="#">Login</a></li>
           <li><a href="#">Register</a></li>
         </ul>

@@ -25,15 +25,15 @@
     </style>
 </head>
 <body>
-        
-        @include('layouts.partials.nav')
-        
-        {{--  @include('partials.flash')  --}}
+
+        @include('layouts.partials.nav') 
+        @include('layouts.partials.flash')
         @yield('content')
         @include('layouts.partials.footer')
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://bootswatch.com/3/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
