@@ -26,7 +26,8 @@ class ContactRequest extends FormRequest
         return [
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'message' => 'required|min:10'
+            'message' => 'required|min:10',
+            'g-recaptcha-response' => 'required'
         ];
     }
 }

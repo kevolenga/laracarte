@@ -11,7 +11,7 @@
                         ask for help
                     </a>
                 </p>
-                <form action="{{ route('contact') }}" method="post">
+                <form action="{{ route('contact') }}" method="post" novalidate>
                     {{ csrf_field() }} 
                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                         <label for="name" class="control-label">Name</label>
@@ -28,6 +28,17 @@
                         <textarea name="message" id="message" class="form-control" cols="30" rows="4" required placeholder="Your message">{{ old('message') }}</textarea>
                         {!! $errors->first('message', '<span class="help-block">:message</span>') !!}
                     </div>
+
+                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                    {!! 
+                        $errors->first(
+                                'g-recaptcha-response', 
+                                '<span class="help-block" style="color:crimson;">
+                                    The captcha is required
+                                </span>'
+                        ) 
+                    !!}
+                    <br>
                     <button type="submit" class="btn btn-primary btn-block">Send the message</button>
                 </form>
             </div>
