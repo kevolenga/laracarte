@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Mail\ContactMessageCreated;
 use Illuminate\Support\Facades\Mail;
@@ -14,9 +15,16 @@ class ContactController extends Controller
     }
 
     public function store(ContactRequest $req){
-        $message = new ContactMessageCreated($req->name, $req->email, $req->message);
-        Mail::to('admin@laracarte.com')->send($message);
+
+        $message = Message::create($req->only('name', 'email', 'message'));
+
+        $mailable = new ContactMessageCreated($message);
+        $admin_email = config('admin.email');
+        
+        Mail::to($admin_email)->send($mailable);
+       
         $this->flash('Your mail has been sent successfully');
+       
         return redirect()->route('home');
     }
 }
